@@ -1,59 +1,63 @@
 import { Check, Circle } from "lucide-react";
 
-import type {
-    Order,
-    OrderStatus,
-} from "@/types/order";
+import type { Order, OrderStatus } from "@/types/order";
 
 interface DeliveryTimelineProps {
     order: Order;
 }
 
-const steps: {
-    id: OrderStatus;
+type TimelineStepId =
+    | "placed"
+    | "processing"
+    | "shipped"
+    | "out-for-delivery"
+    | "delivered";
+
+interface TimelineStep {
+    id: TimelineStepId;
     label: string;
     description: string;
-}[] = [
-        {
-            id: "processing",
-            label: "Order Placed",
-            description: "Your order has been received",
-        },
-        {
-            id: "processing",
-            label: "Processing",
-            description: "We're preparing your order",
-        },
-        {
-            id: "shipped",
-            label: "Shipped",
-            description: "Your package is with the carrier",
-        },
-        {
-            id: "out-for-delivery",
-            label: "Out for Delivery",
-            description: "Your package is on the way",
-        },
-        {
-            id: "delivered",
-            label: "Delivered",
-            description: "Package delivered",
-        },
-    ];
+}
 
-const statusOrder: OrderStatus[] = [
-    "processing",
-    "shipped",
-    "out-for-delivery",
-    "delivered",
+const steps: TimelineStep[] = [
+    {
+        id: "placed",
+        label: "Order Placed",
+        description: "Your order has been received",
+    },
+    {
+        id: "processing",
+        label: "Processing",
+        description: "We're preparing your order",
+    },
+    {
+        id: "shipped",
+        label: "Shipped",
+        description: "Your package is with the carrier",
+    },
+    {
+        id: "out-for-delivery",
+        label: "Out for Delivery",
+        description: "Your package is on the way",
+    },
+    {
+        id: "delivered",
+        label: "Delivered",
+        description: "Package delivered",
+    },
 ];
+
+const statusProgress: Record<OrderStatus, number> = {
+    processing: 1,
+    shipped: 2,
+    "out-for-delivery": 3,
+    delivered: 4,
+};
 
 export function DeliveryTimeline({
     order,
 }: DeliveryTimelineProps) {
-    const currentIndex = statusOrder.indexOf(
-        order.status,
-    );
+    const currentProgress = statusProgress[order.status];
 
     return (
         <section>
@@ -63,22 +67,20 @@ export function DeliveryTimeline({
 
             <div>
                 {steps.map((step, index) => {
-                    const stepIndex = statusOrder.indexOf(
-                        step.id,
-                    );
+                    const stepProgress = index;
 
                     const isCompleted =
-                        stepIndex < currentIndex;
+                        stepProgress < currentProgress;
 
                     const isCurrent =
-                        stepIndex === currentIndex;
+                        stepProgress === currentProgress;
 
                     const isLast =
                         index === steps.length - 1;
 
                     return (
                         <div
-                            key={`${step.label}-${index}`}
+                            key={step.id}
                             className="flex gap-3"
                         >
                             <div className="flex flex-col items-center">
