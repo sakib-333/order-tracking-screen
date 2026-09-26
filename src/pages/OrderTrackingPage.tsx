@@ -12,16 +12,61 @@ import { ProductSummary } from "@/components/order-tracking/ProductSummary";
 import { OrderActions } from "@/components/order-tracking/OrderActions";
 import { SupportCard } from "@/components/order-tracking/SupportCard";
 
+import { OrderLoading } from "@/components/order-tracking/OrderLoading";
+import { OrderEmpty } from "@/components/order-tracking/OrderEmpty";
+import { OrderError } from "@/components/order-tracking/OrderError";
+
+type PageState =
+    | "success"
+    | "loading"
+    | "empty"
+    | "error";
+
 export function OrderTrackingPage() {
     const [trackingState, setTrackingState] =
         useState<TrackingState>("normal");
 
+    const [pageState, setPageState] =
+        useState<PageState>("success");
+
+    const handleTrackingStateChange = (
+        nextState: TrackingState,
+    ) => {
+        if (nextState === trackingState) {
+            return;
+        }
+
+        setPageState("loading");
+
+        setTimeout(() => {
+            setTrackingState(nextState);
+            setPageState("success");
+        }, 800);
+    };
+
     const order = orders[trackingState];
+
+    if (pageState === "loading") {
+        return <OrderLoading />;
+    }
+
+    if (pageState === "empty") {
+        return <OrderEmpty />;
+    }
+
+    if (pageState === "error") {
+        return (
+            <OrderError
+                onRetry={() => setPageState("success")}
+            />
+        );
+    }
 
     return (
         <main className="min-h-screen bg-slate-50 px-4 py-6">
             <div className="mx-auto w-full max-w-md">
-                {/* Development-only state switcher */}
+
+                {/* Demo Controls */}
                 <div className="mb-5 rounded-xl border border-dashed border-slate-300 bg-white p-3">
                     <p className="mb-2 text-xs font-medium text-slate-500">
                         Demo State
@@ -36,7 +81,7 @@ export function OrderTrackingPage() {
                                     : "outline"
                             }
                             onClick={() =>
-                                setTrackingState("normal")
+                                handleTrackingStateChange("normal")
                             }
                         >
                             Normal
@@ -50,7 +95,7 @@ export function OrderTrackingPage() {
                                     : "outline"
                             }
                             onClick={() =>
-                                setTrackingState("delayed")
+                                handleTrackingStateChange("delayed")
                             }
                         >
                             Delayed
@@ -59,12 +104,13 @@ export function OrderTrackingPage() {
                         <Button
                             size="sm"
                             variant={
-                                trackingState === "delivered-not-received"
+                                trackingState ===
+                                    "delivered-not-received"
                                     ? "default"
                                     : "outline"
                             }
                             onClick={() =>
-                                setTrackingState(
+                                handleTrackingStateChange(
                                     "delivered-not-received",
                                 )
                             }
@@ -75,12 +121,14 @@ export function OrderTrackingPage() {
                         <Button
                             size="sm"
                             variant={
-                                trackingState === "tracking-unavailable"
+                                trackingState ===
+                                    "tracking-unavailable"
                                     ? "default"
                                     : "outline"
                             }
+                            
                             onClick={() =>
-                                setTrackingState(
+                                handleTrackingStateChange(
                                     "tracking-unavailable",
                                 )
                             }
@@ -90,18 +138,15 @@ export function OrderTrackingPage() {
                     </div>
                 </div>
 
+                {/* Order Tracking Content */}
                 <div className="space-y-6">
                     <OrderHeader orderId={order.id} />
 
                     <OrderStatusCard order={order} />
 
-                    <DeliveryTimeline
-                        currentStatus={order.status}
-                    />
+                    <DeliveryTimeline order={order} />
 
-                    <ProductSummary
-                        product={order.product}
-                    />
+                    <ProductSummary product={order.product} />
 
                     <OrderActions order={order} />
 

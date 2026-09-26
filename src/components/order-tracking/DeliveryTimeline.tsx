@@ -1,40 +1,47 @@
-import { Check } from "lucide-react";
+import { Check, Circle } from "lucide-react";
 
-import type { OrderStatus } from "@/types/order";
+import type {
+    Order,
+    OrderStatus,
+} from "@/types/order";
 
 interface DeliveryTimelineProps {
-    currentStatus: OrderStatus;
+    order: Order;
 }
 
-const steps = [
-    {
-        id: "processing",
-        label: "Order Placed",
-        description: "Your order has been received",
-    },
-    {
-        id: "processing",
-        label: "Processing",
-        description: "We're preparing your order",
-    },
-    {
-        id: "shipped",
-        label: "Shipped",
-        description: "Your package is with the carrier",
-    },
-    {
-        id: "out-for-delivery",
-        label: "Out for Delivery",
-        description: "Your package is on the way",
-    },
-    {
-        id: "delivered",
-        label: "Delivered",
-        description: "Package delivered",
-    },
-];
+const steps: {
+    id: OrderStatus;
+    label: string;
+    description: string;
+}[] = [
+        {
+            id: "processing",
+            label: "Order Placed",
+            description: "Your order has been received",
+        },
+        {
+            id: "processing",
+            label: "Processing",
+            description: "We're preparing your order",
+        },
+        {
+            id: "shipped",
+            label: "Shipped",
+            description: "Your package is with the carrier",
+        },
+        {
+            id: "out-for-delivery",
+            label: "Out for Delivery",
+            description: "Your package is on the way",
+        },
+        {
+            id: "delivered",
+            label: "Delivered",
+            description: "Package delivered",
+        },
+    ];
 
-const statusOrder = [
+const statusOrder: OrderStatus[] = [
     "processing",
     "shipped",
     "out-for-delivery",
@@ -42,9 +49,11 @@ const statusOrder = [
 ];
 
 export function DeliveryTimeline({
-    currentStatus,
+    order,
 }: DeliveryTimelineProps) {
-    const currentIndex = statusOrder.indexOf(currentStatus);
+    const currentIndex = statusOrder.indexOf(
+        order.status,
+    );
 
     return (
         <section>
@@ -54,17 +63,18 @@ export function DeliveryTimeline({
 
             <div>
                 {steps.map((step, index) => {
-                    const stepStatusIndex = statusOrder.indexOf(
+                    const stepIndex = statusOrder.indexOf(
                         step.id,
                     );
 
                     const isCompleted =
-                        stepStatusIndex < currentIndex;
+                        stepIndex < currentIndex;
 
                     const isCurrent =
-                        stepStatusIndex === currentIndex;
+                        stepIndex === currentIndex;
 
-                    const isLast = index === steps.length - 1;
+                    const isLast =
+                        index === steps.length - 1;
 
                     return (
                         <div
@@ -82,8 +92,10 @@ export function DeliveryTimeline({
                                 >
                                     {isCompleted ? (
                                         <Check className="size-4" />
+                                    ) : isCurrent ? (
+                                        <Circle className="size-3 fill-current" />
                                     ) : (
-                                        <span className="size-2 rounded-full bg-current" />
+                                        <Circle className="size-3" />
                                     )}
                                 </div>
 
@@ -103,7 +115,7 @@ export function DeliveryTimeline({
                                 <p
                                     className={[
                                         "text-sm font-medium",
-                                        isCurrent || isCompleted
+                                        isCompleted || isCurrent
                                             ? "text-slate-900"
                                             : "text-slate-400",
                                     ].join(" ")}
@@ -111,7 +123,7 @@ export function DeliveryTimeline({
                                     {step.label}
                                 </p>
 
-                                <p className="mt-1 text-xs text-slate-500">
+                                <p className="mt-1 text-xs leading-5 text-slate-500">
                                     {step.description}
                                 </p>
                             </div>
@@ -119,6 +131,25 @@ export function DeliveryTimeline({
                     );
                 })}
             </div>
+
+            {order.trackingState === "tracking-unavailable" && (
+                <div className="mt-1 rounded-xl border border-blue-100 bg-blue-50 px-4 py-3">
+                    <p className="text-xs leading-5 text-blue-800">
+                        Tracking details will become available once
+                        your package is handed over to the carrier.
+                    </p>
+                </div>
+            )}
+
+            {order.trackingState === "delayed" && (
+                <div className="mt-1 rounded-xl border border-amber-100 bg-amber-50 px-4 py-3">
+                    <p className="text-xs leading-5 text-amber-800">
+                        This order is currently delayed. We're
+                        working to get it delivered as soon as
+                        possible.
+                    </p>
+                </div>
+            )}
         </section>
     );
 }
