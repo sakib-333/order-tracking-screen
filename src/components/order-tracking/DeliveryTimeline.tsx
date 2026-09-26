@@ -22,7 +22,7 @@ interface TimelineStep {
 const steps: TimelineStep[] = [
     {
         id: "placed",
-        label: "Order Placed",
+        label: "Order placed",
         description: "Your order has been received",
     },
     {
@@ -37,7 +37,7 @@ const steps: TimelineStep[] = [
     },
     {
         id: "out-for-delivery",
-        label: "Out for Delivery",
+        label: "Out for delivery",
         description: "Your package is on the way",
     },
     {
@@ -57,23 +57,28 @@ const statusProgress: Record<OrderStatus, number> = {
 export function DeliveryTimeline({
     order,
 }: DeliveryTimelineProps) {
-    const currentProgress = statusProgress[order.status];
+    const currentProgress =
+        statusProgress[order.status];
 
     return (
-        <section>
-            <h2 className="mb-5 text-base font-semibold text-slate-900">
-                Delivery Progress
-            </h2>
+        <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div className="mb-5">
+                <h2 className="text-base font-semibold text-slate-900">
+                    Delivery progress
+                </h2>
+
+                <p className="mt-1 text-xs text-slate-500">
+                    Follow your package from order to delivery
+                </p>
+            </div>
 
             <div>
                 {steps.map((step, index) => {
-                    const stepProgress = index;
-
                     const isCompleted =
-                        stepProgress < currentProgress;
+                        index < currentProgress;
 
                     const isCurrent =
-                        stepProgress === currentProgress;
+                        index === currentProgress;
 
                     const isLast =
                         index === steps.length - 1;
@@ -83,28 +88,33 @@ export function DeliveryTimeline({
                             key={step.id}
                             className="flex gap-3"
                         >
-                            <div className="flex flex-col items-center">
+                            <div className="flex w-8 shrink-0 flex-col items-center">
                                 <div
                                     className={[
-                                        "flex size-8 shrink-0 items-center justify-center rounded-full border",
+                                        "flex size-8 items-center justify-center rounded-full border-2 transition-colors",
                                         isCompleted || isCurrent
                                             ? "border-blue-600 bg-blue-600 text-white"
-                                            : "border-slate-200 bg-white text-slate-400",
+                                            : "border-slate-200 bg-white text-slate-300",
                                     ].join(" ")}
                                 >
                                     {isCompleted ? (
-                                        <Check className="size-4" />
-                                    ) : isCurrent ? (
-                                        <Circle className="size-3 fill-current" />
+                                        <Check className="size-4" strokeWidth={2.5} />
                                     ) : (
-                                        <Circle className="size-3" />
+                                        <Circle
+                                            className={[
+                                                "size-3",
+                                                isCurrent
+                                                    ? "fill-current"
+                                                    : "",
+                                            ].join(" ")}
+                                        />
                                     )}
                                 </div>
 
                                 {!isLast && (
                                     <div
                                         className={[
-                                            "h-10 w-px",
+                                            "my-1 h-10 w-0.5 rounded-full",
                                             isCompleted
                                                 ? "bg-blue-600"
                                                 : "bg-slate-200",
@@ -113,7 +123,12 @@ export function DeliveryTimeline({
                                 )}
                             </div>
 
-                            <div className="pb-6">
+                            <div
+                                className={[
+                                    "min-w-0 flex-1",
+                                    !isLast ? "pb-5" : "",
+                                ].join(" ")}
+                            >
                                 <p
                                     className={[
                                         "text-sm font-medium",
@@ -134,24 +149,32 @@ export function DeliveryTimeline({
                 })}
             </div>
 
-            {order.trackingState === "tracking-unavailable" && (
-                <div className="mt-1 rounded-xl border border-blue-100 bg-blue-50 px-4 py-3">
-                    <p className="text-xs leading-5 text-blue-800">
-                        Tracking details will become available once
-                        your package is handed over to the carrier.
+            {order.trackingState === "delayed" && (
+                <div className="mt-2 rounded-xl border border-amber-100 bg-amber-50 px-4 py-3">
+                    <p className="text-xs font-medium text-amber-800">
+                        Delivery update
+                    </p>
+
+                    <p className="mt-1 text-xs leading-5 text-amber-700">
+                        Your package is still moving through the
+                        delivery network, but it has been delayed.
                     </p>
                 </div>
             )}
 
-            {order.trackingState === "delayed" && (
-                <div className="mt-1 rounded-xl border border-amber-100 bg-amber-50 px-4 py-3">
-                    <p className="text-xs leading-5 text-amber-800">
-                        This order is currently delayed. We're
-                        working to get it delivered as soon as
-                        possible.
-                    </p>
-                </div>
-            )}
+            {order.trackingState ===
+                "tracking-unavailable" && (
+                    <div className="mt-2 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+                        <p className="text-xs font-medium text-slate-700">
+                            Tracking will appear soon
+                        </p>
+
+                        <p className="mt-1 text-xs leading-5 text-slate-500">
+                            You'll be able to follow your package once
+                            it is handed over to the carrier.
+                        </p>
+                    </div>
+                )}
         </section>
     );
 }

@@ -1,3 +1,5 @@
+import { Package } from "lucide-react";
+
 import type { OrderProduct } from "@/types/order";
 
 interface ProductSummaryProps {
@@ -8,20 +10,26 @@ export function ProductSummary({
     product,
 }: ProductSummaryProps) {
     return (
-        <section>
-            <h2 className="mb-4 text-base font-semibold text-slate-900">
-                Order Summary
-            </h2>
+        <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div className="mb-4 flex items-center gap-2">
+                <Package className="size-4 text-slate-500" />
 
-            <div className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-3">
-                <img
-                    src={product.image}
-                    alt={product.name}
-                    className="size-20 rounded-xl bg-slate-100 object-cover"
-                />
+                <h2 className="text-base font-semibold text-slate-900">
+                    Order summary
+                </h2>
+            </div>
+
+            <div className="flex gap-4">
+                <div className="size-20 shrink-0 overflow-hidden rounded-xl border border-slate-100 bg-slate-50">
+                    <img
+                        src={product.image}
+                        alt={product.name}
+                        className="size-full object-cover"
+                    />
+                </div>
 
                 <div className="min-w-0 flex-1">
-                    <h3 className="truncate text-sm font-semibold text-slate-900">
+                    <h3 className="line-clamp-2 text-sm font-semibold leading-5 text-slate-900">
                         {product.name}
                     </h3>
 
@@ -32,13 +40,13 @@ export function ProductSummary({
                     )}
 
                     <div className="mt-3 flex items-center justify-between">
-                        <span className="text-xs text-slate-500">
+                        <p className="text-xs text-slate-500">
                             Qty: {product.quantity}
-                        </span>
+                        </p>
 
-                        <span className="text-sm font-semibold text-slate-900">
+                        <p className="text-sm font-semibold text-slate-900">
                             ${product.price.toFixed(2)}
-                        </span>
+                        </p>
                     </div>
                 </div>
             </div>

@@ -63,16 +63,17 @@ export function OrderTrackingPage() {
     }
 
     return (
-        <main className="min-h-screen bg-slate-50 px-4 py-6">
-            <div className="mx-auto w-full max-w-md">
-
+        <main className="min-h-screen bg-slate-50">
+            <div className="mx-auto w-full max-w-md px-4 pb-10 pt-5">
                 {/* Demo Controls */}
-                <div className="mb-5 rounded-xl border border-dashed border-slate-300 bg-white p-3">
-                    <p className="mb-2 text-xs font-medium text-slate-500">
-                        Demo State
-                    </p>
+                <div className="mb-5 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+                    <div className="border-b border-slate-100 px-4 py-3">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+                            Demo Scenarios
+                        </p>
+                    </div>
 
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 p-3">
                         <Button
                             size="sm"
                             variant={
@@ -126,7 +127,6 @@ export function OrderTrackingPage() {
                                     ? "default"
                                     : "outline"
                             }
-                            
                             onClick={() =>
                                 handleTrackingStateChange(
                                     "tracking-unavailable",
@@ -138,8 +138,8 @@ export function OrderTrackingPage() {
                     </div>
                 </div>
 
-                {/* Order Tracking Content */}
-                <div className="space-y-6">
+                {/* Order Tracking */}
+                <div className="space-y-4">
                     <OrderHeader orderId={order.id} />
 
                     <OrderStatusCard order={order} />
