@@ -1,0 +1,71 @@
+# PROMPTS:
+1. hello
+
+2. <div class="relative select-none overflow-hidden rounded-lg border border-slate-100 bg-slate-50 p-4" style="user-select: none;"><div class="pointer-events-none absolute inset-0 z-10 flex flex-wrap content-start gap-x-8 gap-y-8 overflow-hidden opacity-[0.07]"><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span><span class="-rotate-[24deg] whitespace-nowrap text-xs font-medium text-slate-900">sakib.cse.333@gmail.com - 9/26/2026, 11:33:40 AM</span></div><div class="relative z-0 text-sm text-slate-700"><p class="whitespace-pre-wrap">TASK 1 — ORDER TRACKING SCREEN ⭐
+
+Design and implement a modern, professional mobile Order Tracking screen for an e-commerce application.
+
+The current application only displays:
+- Processing
+- Shipped
+- Out for Delivery
+- Delivered
+
+Users report that the current status is difficult to understand. Redesign and implement the experience so delivery status is clear at a glance.
+
+Requirements:
+- Clear visual delivery progress/timeline
+- Current order status
+- Estimated delivery date/time
+- Order/product summary
+- Clear way to contact support
+- Appropriate loading/empty/error states where relevant
+- Responsive design for approximately 360–430px mobile widths
+- Clean spacing, typography, hierarchy, and visual consistency
+- Meaningful interactions such as viewing order details, contacting support, or reporting a delivery issue
+
+The UI must handle all three situations:
+
+1. Delayed Order — the estimated delivery time has passed or the order is significantly delayed. Clearly communicate the delay and provide an appropriate next step.
+
+2. Delivered but Not Received — the system says the order was delivered, but the customer reports they did not receive it. Provide an appropriate next step or support action.
+
+3. Tracking Not Available Yet — the order exists, but tracking information is not available yet. Avoid an empty or broken-looking screen.
+
+Show how the same product experience adapts to all three states.
+
+Technical requirements are flexible: React.js / Next.js / another frontend framework; CSS / Tailwind / CSS Modules / another styling approach; any reasonable UI/icon library. Backend integration is not required — mock/static data is acceptable.
+
+Submission (both fields below are required): a live deployed URL, accessible without the evaluator running the project locally, and a GitHub repository URL whose README contains brief setup/run instructions.</p></div></div>
+---------------------------------------
+i have this task to implement. befor implementation, i want to understand what actually i need to do for this task as this requirement is not fully understandable.
+
+3. for this task implemetation i will use vite+react, tailwind css, and shandcn ui. let's assume that i have already setup these. now give me 3-4 steps, what i should do with according to the requirements with proper explanation.
+
+4. give me files and folder-based code.
+
+5. i have completed the all the steps you have given as response. now give me next 2-3 steps with proper code and files and folders structure.
+
+6. i want to setup loading state when user switch between tabs. use setTimeout to forcely wait user. please update the code base and give me full updated code.
+
+7. now i want to remove: `Loading`, `Empty`, and `Error` from the header.
+
+8. i have completed all the steps up until you have given. now give me next 2-3 steps.
+
+9. ok. but the ui is not look proper professional. can you update the ui with proper polishing?
+
+10. can you make the header proper segmented? if you need can reduce padding and font size.
+
+11. now when i am switching between segmented then the whole page is loading but i want only the body will have loading state and the header and footer will don't have loading state skeliton. how can i do this?
+
+12. the header segmented will take the entire width. how can i do this?
+
+13. make this fully responsive for web, tablet, mobile. currently i have the mobile devices ui, that's looks good. now you need to do for the tablet and web. you can you shadcn ui components. note that i don' want any back button at the top.
+
+14. for the all components the max with will be: `max-w-7xl`. please apply this.
+
+15. ok. i have completed the design part. now give me the next steps
+
+16. give me proper: `README.md` context.
+
+# CONVERSATION URL: https://chatgpt.com/share/6ab76df6-77fc-83e8-9ad1-341650786470
